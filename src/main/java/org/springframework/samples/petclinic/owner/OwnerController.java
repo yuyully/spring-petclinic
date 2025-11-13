@@ -67,9 +67,7 @@ class OwnerController {
 	@ModelAttribute("owner")
 	public Owner findOwner(@PathVariable(name = "ownerId", required = false) @Nullable Integer ownerId) {
 		return ownerId == null ? new Owner()
-				: this.owners.findById(ownerId)
-					.orElseThrow(() -> new IllegalArgumentException("Owner not found with id: " + ownerId
-							+ ". Please ensure the ID is correct " + "and the owner exists in the database."));
+				: this.owners.findById(ownerId).orElseThrow(() -> new OwnerNotFoundException(ownerId));
 	}
 
 	@GetMapping("/owners/new")
@@ -168,9 +166,7 @@ class OwnerController {
 	@GetMapping("/owners/{ownerId}")
 	public ModelAndView showOwner(@PathVariable("ownerId") int ownerId) {
 		ModelAndView mav = new ModelAndView("owners/ownerDetails");
-		Optional<Owner> optionalOwner = this.owners.findById(ownerId);
-		Owner owner = optionalOwner.orElseThrow(() -> new IllegalArgumentException(
-				"Owner not found with id: " + ownerId + ". Please ensure the ID is correct "));
+		Owner owner = this.owners.findById(ownerId).orElseThrow(() -> new OwnerNotFoundException(ownerId));
 		mav.addObject(owner);
 		return mav;
 	}
