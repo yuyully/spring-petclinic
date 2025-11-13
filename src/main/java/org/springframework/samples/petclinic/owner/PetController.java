@@ -107,13 +107,8 @@ class PetController {
 	public String processCreationForm(Owner owner, @Valid Pet pet, BindingResult result,
 			RedirectAttributes redirectAttributes) {
 
-		if (StringUtils.hasText(pet.getName()) && pet.isNew() && owner.getPet(pet.getName(), true) != null)
-			result.rejectValue("name", "duplicate", "already exists");
-
-		LocalDate currentDate = LocalDate.now();
-		if (pet.getBirthDate() != null && pet.getBirthDate().isAfter(currentDate)) {
-			result.rejectValue("birthDate", "typeMismatch.birthDate");
-		}
+		validatePetNameIsUnique(owner, pet, result, true);
+		validateBirthDateNotInFuture(pet, result);
 
 		if (result.hasErrors()) {
 			return VIEWS_PETS_CREATE_OR_UPDATE_FORM;
@@ -134,20 +129,8 @@ class PetController {
 	public String processUpdateForm(Owner owner, @Valid Pet pet, BindingResult result,
 			RedirectAttributes redirectAttributes) {
 
-		String petName = pet.getName();
-
-		// checking if the pet name already exists for the owner
-		if (StringUtils.hasText(petName)) {
-			Pet existingPet = owner.getPet(petName, false);
-			if (existingPet != null && !Objects.equals(existingPet.getId(), pet.getId())) {
-				result.rejectValue("name", "duplicate", "already exists");
-			}
-		}
-
-		LocalDate currentDate = LocalDate.now();
-		if (pet.getBirthDate() != null && pet.getBirthDate().isAfter(currentDate)) {
-			result.rejectValue("birthDate", "typeMismatch.birthDate");
-		}
+		validatePetNameIsUnique(owner, pet, result, false);
+		validateBirthDateNotInFuture(pet, result);
 
 		if (result.hasErrors()) {
 			return VIEWS_PETS_CREATE_OR_UPDATE_FORM;
@@ -177,6 +160,37 @@ class PetController {
 			owner.addPet(pet);
 		}
 		this.owners.save(owner);
+	}
+
+	/**
+	 * Validates that the pet's birth date is not in the future.
+	 * @param pet The pet to validate
+	 * @param result The binding result to add errors to
+	 */
+	private void validateBirthDateNotInFuture(Pet pet, BindingResult result) {
+		LocalDate currentDate = LocalDate.now();
+		if (pet.getBirthDate() != null && pet.getBirthDate().isAfter(currentDate)) {
+			result.rejectValue("birthDate", "typeMismatch.birthDate");
+		}
+	}
+
+	/**
+	 * Validates that the pet name is unique for the owner.
+	 * @param owner The owner of the pet
+	 * @param pet The pet to validate
+	 * @param result The binding result to add errors to
+	 * @param isNewPet Whether this is a new pet being created
+	 */
+	private void validatePetNameIsUnique(Owner owner, Pet pet, BindingResult result, boolean isNewPet) {
+		String petName = pet.getName();
+		if (StringUtils.hasText(petName)) {
+			Pet existingPet = owner.getPet(petName, isNewPet);
+			if (existingPet != null) {
+				if (isNewPet || !Objects.equals(existingPet.getId(), pet.getId())) {
+					result.rejectValue("name", "duplicate", "already exists");
+				}
+			}
+		}
 	}
 
 }
