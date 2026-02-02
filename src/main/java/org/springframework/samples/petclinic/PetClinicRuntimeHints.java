@@ -38,7 +38,6 @@ import org.springframework.samples.petclinic.vet.Vet;
  * <li>Domain model entities can be serialized for caching and other purposes</li>
  * </ul>
  *
- * @author Spring PetClinic Team
  * @see RuntimeHintsRegistrar
  * @see RuntimeHints
  */
