@@ -24,8 +24,46 @@ import org.springframework.samples.petclinic.model.BaseEntity;
 import org.springframework.samples.petclinic.model.Person;
 import org.springframework.samples.petclinic.vet.Vet;
 
+/**
+ * Registers runtime hints needed by the PetClinic application for AOT/native-image usage.
+ * <p>
+ * This class implements {@link RuntimeHintsRegistrar} to provide the Spring AOT engine with
+ * information about resources and types that need to be available at runtime when the
+ * application is compiled to a native image using GraalVM.
+ * <p>
+ * The registered hints ensure that:
+ * <ul>
+ * <li>Database initialization scripts and configuration files are accessible</li>
+ * <li>Internationalization message bundles can be loaded</li>
+ * <li>Domain model entities can be serialized for caching and other purposes</li>
+ * </ul>
+ *
+ * @author Spring PetClinic Team
+ * @see RuntimeHintsRegistrar
+ * @see RuntimeHints
+ */
 public class PetClinicRuntimeHints implements RuntimeHintsRegistrar {
 
+	/**
+	 * Contributes resource and serialization hints required at runtime.
+	 * <p>
+	 * Resource patterns are registered to make non-code assets visible in the native image:
+	 * <ul>
+	 * <li>{@code db/*} - Database schema and data initialization scripts for HSQLDB and MySQL</li>
+	 * <li>{@code messages/*} - Internationalization message property files</li>
+	 * <li>{@code mysql-default-conf} - MySQL configuration file</li>
+	 * </ul>
+	 * <p>
+	 * Serialization types are registered to ensure reflection metadata is available for:
+	 * <ul>
+	 * <li>{@link BaseEntity} - Base class for all persistent entities</li>
+	 * <li>{@link Person} - Base class for person-related entities</li>
+	 * <li>{@link Vet} - Veterinarian entity</li>
+	 * </ul>
+	 *
+	 * @param hints the runtime hints registry to update
+	 * @param classLoader the class loader to use, if available
+	 */
 	@Override
 	public void registerHints(RuntimeHints hints, @Nullable ClassLoader classLoader) {
 		hints.resources().registerPattern("db/*"); // https://github.com/spring-projects/spring-boot/issues/32654
