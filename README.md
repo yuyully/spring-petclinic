@@ -1,6 +1,6 @@
-# Spring PetClinic Sample Application [![Build Status](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml/badge.svg)](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml)[![Build Status](https://github.com/spring-projects/spring-petclinic/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/spring-projects/spring-petclinic/actions/workflows/gradle-build.yml)
+# Spring PetClinic Sample Application [![Build Status](https://github.com/yuyully/spring-petclinic/actions/workflows/maven-build.yml/badge.svg)](https://github.com/yuyully/spring-petclinic/actions/workflows/maven-build.yml)[![Build Status](https://github.com/yuyully/spring-petclinic/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/yuyully/spring-petclinic/actions/workflows/gradle-build.yml)
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/spring-projects/spring-petclinic) [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=7517918)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/yuyully/spring-petclinic) [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=yuyully/spring-petclinic)
 
 ## Understanding the Spring Petclinic application with a few diagrams
 
@@ -17,7 +17,7 @@ Spring Petclinic is a [Spring Boot](https://spring.io/guides/gs/spring-boot) app
 Java 25 or later is required for the build, but the application can run with Java 17 or newer:
 
 ```bash
-git clone https://github.com/spring-projects/spring-petclinic.git
+git clone https://github.com/yuyully/spring-petclinic.git
 cd spring-petclinic
 ./mvnw package
 java -jar target/*.jar
@@ -112,7 +112,7 @@ The following items should be installed in your system:
 1. On the command line run:
 
     ```bash
-    git clone https://github.com/spring-projects/spring-petclinic.git
+    git clone https://github.com/yuyully/spring-petclinic.git
     ```
 
 1. Inside Eclipse or STS:
