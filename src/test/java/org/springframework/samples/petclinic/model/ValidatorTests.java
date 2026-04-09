@@ -23,6 +23,7 @@ import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.samples.petclinic.owner.PetType;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 import jakarta.validation.ConstraintViolation;
@@ -54,6 +55,22 @@ class ValidatorTests {
 		assertThat(constraintViolations).hasSize(1);
 		ConstraintViolation<Person> violation = constraintViolations.iterator().next();
 		assertThat(violation.getPropertyPath()).hasToString("firstName");
+		assertThat(violation.getMessage()).isEqualTo("must not be blank");
+	}
+
+	@Test
+	void shouldNotValidateWhenNamedEntityNameEmpty() {
+
+		LocaleContextHolder.setLocale(Locale.ENGLISH);
+		PetType petType = new PetType();
+		petType.setName("");
+
+		Validator validator = createValidator();
+		Set<ConstraintViolation<PetType>> constraintViolations = validator.validate(petType);
+
+		assertThat(constraintViolations).hasSize(1);
+		ConstraintViolation<PetType> violation = constraintViolations.iterator().next();
+		assertThat(violation.getPropertyPath()).hasToString("name");
 		assertThat(violation.getMessage()).isEqualTo("must not be blank");
 	}
 
