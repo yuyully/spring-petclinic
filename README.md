@@ -1,6 +1,6 @@
 # Spring PetClinic Sample Application [![Build Status](https://github.com/yuyully/spring-petclinic/actions/workflows/maven-build.yml/badge.svg)](https://github.com/yuyully/spring-petclinic/actions/workflows/maven-build.yml)[![Build Status](https://github.com/yuyully/spring-petclinic/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/yuyully/spring-petclinic/actions/workflows/gradle-build.yml)
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/yuyully/spring-petclinic) [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=yuyully/spring-petclinic)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/yuyully/spring-petclinic) [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=1095555484)
 
 ## Understanding the Spring Petclinic application with a few diagrams
 
