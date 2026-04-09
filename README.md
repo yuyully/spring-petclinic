@@ -1,6 +1,6 @@
-# Spring PetClinic Sample Application [![Build Status](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml/badge.svg)](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml)[![Build Status](https://github.com/spring-projects/spring-petclinic/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/spring-projects/spring-petclinic/actions/workflows/gradle-build.yml)
+# Spring PetClinic Sample Application [![Build Status](https://github.com/yuyully/spring-petclinic/actions/workflows/maven-build.yml/badge.svg)](https://github.com/yuyully/spring-petclinic/actions/workflows/maven-build.yml)[![Build Status](https://github.com/yuyully/spring-petclinic/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/yuyully/spring-petclinic/actions/workflows/gradle-build.yml)
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/spring-projects/spring-petclinic) [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=7517918)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/yuyully/spring-petclinic) [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=yuyully/spring-petclinic)
 
 ## Understanding the Spring Petclinic application with a few diagrams
 
@@ -17,7 +17,7 @@ Spring Petclinic is a [Spring Boot](https://spring.io/guides/gs/spring-boot) app
 Java 25 or later is required for the build, but the application can run with Java 17 or newer:
 
 ```bash
-git clone https://github.com/spring-projects/spring-petclinic.git
+git clone https://github.com/yuyully/spring-petclinic.git
 cd spring-petclinic
 ./mvnw package
 java -jar target/*.jar
@@ -47,7 +47,7 @@ There is no `Dockerfile` in this project. You can build a container image (if yo
 
 ## In case you find a bug/suggested improvement for Spring Petclinic
 
-Our issue tracker is available [here](https://github.com/spring-projects/spring-petclinic/issues).
+Our issue tracker is available [here](https://github.com/yuyully/spring-petclinic/issues).
 
 ## Database configuration
 
@@ -69,8 +69,8 @@ or
 docker run -e POSTGRES_USER=petclinic -e POSTGRES_PASSWORD=petclinic -e POSTGRES_DB=petclinic -p 5432:5432 postgres:18.0
 ```
 
-Further documentation is provided for [MySQL](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/resources/db/mysql/petclinic_db_setup_mysql.txt)
-and [PostgreSQL](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/resources/db/postgres/petclinic_db_setup_postgres.txt).
+Further documentation is provided for [MySQL](https://github.com/yuyully/spring-petclinic/blob/main/src/main/resources/db/mysql/petclinic_db_setup_mysql.txt)
+and [PostgreSQL](https://github.com/yuyully/spring-petclinic/blob/main/src/main/resources/db/postgres/petclinic_db_setup_postgres.txt).
 
 Instead of vanilla `docker` you can also use the provided `docker-compose.yml` file to start the database containers. Each one has a service named after the Spring profile:
 
@@ -112,7 +112,7 @@ The following items should be installed in your system:
 1. On the command line run:
 
     ```bash
-    git clone https://github.com/spring-projects/spring-petclinic.git
+    git clone https://github.com/yuyully/spring-petclinic.git
     ```
 
 1. Inside Eclipse or STS:
@@ -137,9 +137,9 @@ The following items should be installed in your system:
 
 |Spring Boot Configuration | Class or Java property files  |
 |--------------------------|---|
-|The Main Class | [PetClinicApplication](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java) |
-|Properties Files | [application.properties](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/resources) |
-|Caching | [CacheConfiguration](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/java/org/springframework/samples/petclinic/system/CacheConfiguration.java) |
+|The Main Class | [PetClinicApplication](https://github.com/yuyully/spring-petclinic/blob/main/src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java) |
+|Properties Files | [application.properties](https://github.com/yuyully/spring-petclinic/blob/main/src/main/resources) |
+|Caching | [CacheConfiguration](https://github.com/yuyully/spring-petclinic/blob/main/src/main/java/org/springframework/samples/petclinic/system/CacheConfiguration.java) |
 
 ## Interesting Spring Petclinic branches and forks
 
@@ -161,7 +161,7 @@ Here is a list of them:
 
 ## Contributing
 
-The [issue tracker](https://github.com/spring-projects/spring-petclinic/issues) is the preferred channel for bug reports, feature requests and submitting pull requests.
+The [issue tracker](https://github.com/yuyully/spring-petclinic/issues) is the preferred channel for bug reports, feature requests and submitting pull requests.
 
 For pull requests, editor preferences are available in the [editor config](.editorconfig) for easy use in common text editors. Read more and download plugins at <https://editorconfig.org>. All commits must include a __Signed-off-by__ trailer at the end of each commit message to indicate that the contributor agrees to the Developer Certificate of Origin.
 For additional details, please refer to the blog post [Hello DCO, Goodbye CLA: Simplifying Contributions to Spring](https://spring.io/blog/2025/01/06/hello-dco-goodbye-cla-simplifying-contributions-to-spring).
