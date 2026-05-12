@@ -166,12 +166,12 @@ The [issue tracker](https://github.com/spring-projects/spring-petclinic/issues) 
 For pull requests, editor preferences are available in the [editor config](.editorconfig) for easy use in common text editors. Read more and download plugins at <https://editorconfig.org>. All commits must include a __Signed-off-by__ trailer at the end of each commit message to indicate that the contributor agrees to the Developer Certificate of Origin.
 For additional details, please refer to the blog post [Hello DCO, Goodbye CLA: Simplifying Contributions to Spring](https://spring.io/blog/2025/01/06/hello-dco-goodbye-cla-simplifying-contributions-to-spring).
 
-### Requesting a conversation summary
+### Providing enough context in issues
 
-If you need a detailed summary, please include:
+If you need maintainers to summarize prior discussion or update docs quickly, please include:
 
-- The full series of user/assistant message pairs
-- Context about README changes that are needed
+- Links to the full discussion history
+- Context about which README changes are needed
 - Any relevant code snippets, requirements, or decisions
 - The final intent or goal for the task
 
