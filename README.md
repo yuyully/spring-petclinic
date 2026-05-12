@@ -14,28 +14,33 @@ See the presentation here:
 ## Run Petclinic locally
 
 Spring Petclinic is a [Spring Boot](https://spring.io/guides/gs/spring-boot) application built using [Maven](https://spring.io/guides/gs/maven/) or [Gradle](https://spring.io/guides/gs/gradle/).
-Java 25 or later is required for the build, but the application can run with Java 17 or newer:
+Java 25 or later is required for the build, and the application targets Java 17 runtime or newer.
+
+You first need to clone the project locally:
 
 ```bash
-git clone https://github.com/spring-projects/spring-petclinic.git
+git clone https://github.com/yuyully/spring-petclinic.git
 cd spring-petclinic
-./mvnw package
-java -jar target/*.jar
 ```
 
-(On Windows, or if your shell doesn't expand the glob, you might need to specify the JAR file name explicitly on the command line at the end there.)
-
-You can then access the Petclinic at <http://localhost:8080/>.
-
-<img width="1042" alt="petclinic-screenshot" src="https://cloud.githubusercontent.com/assets/838318/19727082/2aee6d6c-9b8e-11e6-81fe-e889a5ddfded.png">
-
-Or you can run it from Maven directly using the Spring Boot Maven plugin. If you do this, it will pick up changes that you make in the project immediately (changes to Java source files require a compile as well - most people use an IDE for this):
+If you are using Maven, you can start the application on the command-line as follows:
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-> NOTE: If you prefer to use Gradle, you can build the app using `./gradlew build` and look for the jar file in `build/libs`.
+With Gradle, the command is as follows:
+
+```bash
+./gradlew bootRun
+```
+
+You can then access the Petclinic at <http://localhost:8080/>.
+
+<img width="1042" alt="petclinic-screenshot" src="https://cloud.githubusercontent.com/assets/838318/19727082/2aee6d6c-9b8e-11e6-81fe-e889a5ddfded.png">
+
+You can, of course, run Petclinic in your favorite IDE.
+See below for more details.
 
 ## Building a Container
 
@@ -44,6 +49,8 @@ There is no `Dockerfile` in this project. You can build a container image (if yo
 ```bash
 ./mvnw spring-boot:build-image
 ```
+
+> NOTE: With Gradle, you can build the container image using `./gradlew bootBuildImage`.
 
 ## In case you find a bug/suggested improvement for Spring Petclinic
 
@@ -102,7 +109,7 @@ The following items should be installed in your system:
 - [Git command line tool](https://help.github.com/articles/set-up-git)
 - Your preferred IDE
   - Eclipse with the m2e plugin. Note: when m2e is available, there is an m2 icon in `Help -> About` dialog. If m2e is
-  not there, follow the install process [here](https://www.eclipse.org/m2e/)
+  not there, follow the installation process [here](https://www.eclipse.org/m2e/)
   - [Spring Tools Suite](https://spring.io/tools) (STS)
   - [IntelliJ IDEA](https://www.jetbrains.com/idea/)
   - [VS Code](https://code.visualstudio.com)
@@ -112,7 +119,7 @@ The following items should be installed in your system:
 1. On the command line run:
 
     ```bash
-    git clone https://github.com/spring-projects/spring-petclinic.git
+    git clone https://github.com/yuyully/spring-petclinic.git
     ```
 
 1. Inside Eclipse or STS:
