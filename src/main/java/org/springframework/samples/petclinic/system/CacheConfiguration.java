@@ -34,7 +34,7 @@ class CacheConfiguration {
 
 	@Bean
 	public JCacheManagerCustomizer petclinicCacheConfigurationCustomizer() {
-		return cm -> cm.createCache("vets", cacheConfiguration());
+		return cm -> cm.createCache("vets", cacheConfiguration1());
 	}
 
 	/**
@@ -46,7 +46,7 @@ class CacheConfiguration {
 	 * configuration options (like the size limit) must be set via a configuration
 	 * mechanism that is provided by the selected JCache implementation.
 	 */
-	private javax.cache.configuration.Configuration<Object, Object> cacheConfiguration() {
+	private javax.cache.configuration.Configuration<Object, Object> cacheConfiguration1() {
 		return new MutableConfiguration<>().setStatisticsEnabled(true);
 	}
 

@@ -229,6 +229,15 @@ class OwnerControllerTests {
 	}
 
 	@Test
+	void testShowOwnerNotFound() throws Exception {
+		given(this.owners.findById(999)).willReturn(Optional.empty());
+		mockMvc.perform(get("/owners/{ownerId}", 999))
+			.andExpect(status().isNotFound())
+			.andExpect(view().name("error"))
+			.andExpect(model().attribute("status", 404));
+	}
+
+	@Test
 	public void testProcessUpdateOwnerFormWithIdMismatch() throws Exception {
 		int pathOwnerId = 1;
 

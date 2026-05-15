@@ -15,17 +15,24 @@
  */
 package org.springframework.samples.petclinic.system;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * Controller used to showcase what happens when an exception is thrown
+ * Controller used to showcase what happens when an exception is thrown.
+ *
+ * <p>
+ * Registered only when {@code petclinic.demo.crash-endpoint=true} (default). Disable in
+ * production by setting that property to {@code false} so the intentional-crash endpoint
+ * is not exposed.
  *
  * @author Michael Isvy
  * <p/>
  * Also see how a view that resolves to "error" has been added ("error.html").
  */
 @Controller
+@ConditionalOnProperty(name = "petclinic.demo.crash-endpoint", havingValue = "true", matchIfMissing = true)
 class CrashController {
 
 	@GetMapping("/oups")

@@ -21,15 +21,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportRuntimeHints;
 
 /**
- * PetClinic Spring Boot Application.
- *
- * @author Dave Syer
+ * Starts the Spring Boot PetClinic application.
  */
 @SpringBootApplication
 @ImportRuntimeHints(PetClinicRuntimeHints.class)
 public class PetClinicApplication {
 
+	/**
+	 * Launches the application.
+	 * @param args command-line arguments passed at startup
+	 */
 	public static void main(String[] args) {
+		System.out.println("123");
 		SpringApplication.run(PetClinicApplication.class, args);
 	}
 
