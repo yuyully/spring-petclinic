@@ -2,6 +2,19 @@
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/spring-projects/spring-petclinic) [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=7517918)
 
+## What this project is
+
+Spring PetClinic is a sample web application for managing a veterinary clinic. Clinic staff can search for and maintain pet owners, record each owner's pets and their visits, and browse the veterinarians and their specialties. It demonstrates how to build a server-rendered application with Spring Boot; it is intended as a learning example rather than a production clinic system.
+
+The application is organized around a typical Spring MVC request flow:
+
+- Controllers in `src/main/java/org/springframework/samples/petclinic` handle web requests and prepare data for the pages.
+- JPA entities and Spring Data repositories model and persist owners, pets, visits, and veterinarians.
+- Thymeleaf templates in `src/main/resources/templates` render the pages.
+- The default database is in-memory H2. MySQL and PostgreSQL are also supported through Spring profiles.
+
+For example, an owner search is handled by the owner controller, which queries the owner repository; the matching owners are then shown in a Thymeleaf page. The owner details page brings together the owner's contact information, pets, and visit history.
+
 ## Understanding the Spring Petclinic application with a few diagrams
 
 See the presentation here:  
